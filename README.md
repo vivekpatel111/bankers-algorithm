@@ -12,6 +12,30 @@ Banker’s Algorithm, which is a deadlock avoidance algorithm. It is called the 
 | DEFINE.CPP | banker class definitions |
 | GRAPHICS.CPP | graphics related functions |
 
+## Data Structures
+The following data structures are needed:
+
+`no_of_process` represents the number of processes and `no_of_resource` represents the number of resource types.
+
+1. Available
+    1. A vector (array) of available resources of each type
+    2. If `available[j] = k`, then `k` instances of `R`<sub>j</sub> are available.
+
+2. Max
+    1. A `n` `no_of_process` by `no_of_resource` matrix
+    2. Defines maximum demand for each process
+    3. `maximum[i][j] = k`, then process `P`<sub>i</sub> may request at most `k` instances of resource `R`<sub>j</sub>.
+
+3. Allocation
+    1. A `n` `no_of_process` by `no_of_resource` matrix
+    2.Defines number of resources of each type currently allocated to each process
+    3. `allocation[i][j]=k`, then process `P`<sub>i</sub> is currently allocated `k` instances of `R`<sub>j</sub>.
+
+4. Need
+    1. A `n` `no_of_process` by `no_of_resource` matrix
+    2. Indicates remaining resource need of each process
+    3. If `need[i][j] = k`, then process `P`<sub>i</sub> needs `k` more instances of `R`<sub>j</sub>.
+    4. `need[i][j] = maximum[i][j] - allocation[i][j]`
 
 ## Screenshots
 ### Application
